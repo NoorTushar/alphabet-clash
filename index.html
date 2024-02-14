@@ -20,7 +20,7 @@
       >
          <!-- opening window start-->
          <section
-            class="text-white flex justify-center items-center min-h-screen hidden"
+            class="text-white flex justify-center items-center min-h-screen"
          >
             <div class="text-center">
                <h1 class="font-anton text-[170px]">ALPHABET CLASH</h1>
@@ -28,6 +28,8 @@
                   Unleash Your Keyboard Kung Fu : Press “Enter” to Play
                </h4>
                <button
+                  id="playButton"
+                  onclick="play()"
                   class="text-2xl text-[#010313] bg-white rounded-lg px-9 py-5 mt-14"
                >
                   Play Now
@@ -108,17 +110,14 @@
 
          <!-- score window start-->
          <section
-            class="max-w-[1170x] w-4/5 mx-auto h-screen flex flex-col items-center justify-center"
+            class="max-w-[1170x] w-4/5 mx-auto h-screen flex flex-col items-center justify-center hidden"
          >
-            <!-- border-radius: 16px;
-border: 1px solid rgba(255, 255, 255, 0.20);
-background: linear-gradient(121deg, rgba(255, 255, 255, 0.56) 0%, rgba(152, 151, 151, 0.00) 102.2%); -->
-            <!-- #ffffff8f -->
-            <!--  -->
             <div
-               class="rounded-2xl text-white text-center space-y-6 border border-[#ffffff33] bg-gradient-to-br from-[#ffffff8f] to-[#989797] p-10"
+               class="rounded-2xl text-white text-center space-y-6 border border-[#ffffff33] bg-gradient-to-tl from-[#ffffff33] to-[#989797] p-10"
             >
-               <h2 class="font-extrabold text-6xl">Score : <span>14</span></h2>
+               <h2 class="font-extrabold text-6xl">
+                  Score : <span class="font-normal">14</span>
+               </h2>
                <button
                   class="text-2xl text-[#010313] bg-white rounded-lg px-9 py-5"
                >
@@ -130,8 +129,7 @@ background: linear-gradient(121deg, rgba(255, 255, 255, 0.56) 0%, rgba(152, 151,
          <!-- opening window end-->
       </main>
 
-      <script>
-         document.getElementById("body").classList.add("one", "two");
-      </script>
+      <!-- Javascript files -->
+      <script src="scripts/alpha-clash.js"></script>
    </body>
 </html>
