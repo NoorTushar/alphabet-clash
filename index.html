@@ -14,7 +14,7 @@
       <!-- custom css -->
       <link rel="stylesheet" href="css/common.css" />
    </head>
-   <body class="font-poppins">
+   <body class="font-poppins" id="body">
       <main
          class="bg-[#010313] min-h-screen bg-[url('images/background.png')] bg-no-repeat bg-center"
       >
@@ -37,9 +37,8 @@
          <!-- opening window end-->
 
          <!-- game window start-->
-         <section class="max-w-[1170x] w-4/5 mx-auto">
-            <!-- display -->
-
+         <section class="max-w-[1170x] w-4/5 mx-auto hidden">
+            <!-- display start -->
             <div
                class="relative h-[450px] border-[20px] border-[#010312cc] rounded-2xl bg-[#ffffffb3] backdrop-blur flex justify-center items-center"
             >
@@ -50,14 +49,89 @@
                </div>
                <h2 class="font-semibold text-9xl text-[#010313]">Y</h2>
             </div>
-            <!-- keyboard -->
+            <!-- display end -->
+
+            <!-- keyboard start -->
+            <div>
+               <div class="flex justify-center gap-1 my-1 w-full">
+                  <kbd class="kbd">q</kbd>
+                  <kbd class="kbd">w</kbd>
+                  <kbd class="kbd">e</kbd>
+                  <kbd class="kbd">r</kbd>
+                  <kbd class="kbd">t</kbd>
+                  <kbd class="kbd">y</kbd>
+                  <kbd class="kbd">u</kbd>
+                  <kbd class="kbd">i</kbd>
+                  <kbd class="kbd">o</kbd>
+                  <kbd class="kbd">p</kbd>
+               </div>
+               <div class="flex justify-center gap-1 my-1 w-full">
+                  <kbd class="kbd">a</kbd>
+                  <kbd class="kbd">s</kbd>
+                  <kbd class="kbd">d</kbd>
+                  <kbd class="kbd">f</kbd>
+                  <kbd class="kbd">g</kbd>
+                  <kbd class="kbd">h</kbd>
+                  <kbd class="kbd">j</kbd>
+                  <kbd class="kbd">k</kbd>
+                  <kbd class="kbd">l</kbd>
+               </div>
+               <div class="flex justify-center gap-1 my-1 w-full">
+                  <kbd class="kbd">z</kbd>
+                  <kbd class="kbd">x</kbd>
+                  <kbd class="kbd">c</kbd>
+                  <kbd class="kbd">v</kbd>
+                  <kbd class="kbd">b</kbd>
+                  <kbd class="kbd">n</kbd>
+                  <kbd class="kbd">m</kbd>
+                  <kbd class="kbd">/</kbd>
+               </div>
+            </div>
+            <!-- keyboard end -->
+
             <!-- life & score -->
+            <div class="flex justify-between items-center">
+               <button
+                  class="flex items-center justify-between gap-2 py-4 px-7 bg-[#894189] rounded-full font-medium text-xl font-inter text-white"
+               >
+                  Life<img src="images/Group 23.svg" alt="" />
+               </button>
+
+               <button
+                  class="flex items-center justify-between gap-2 py-4 px-7 bg-[#360490] rounded-full font-medium text-xl font-inter text-white"
+               >
+                  Score<img src="images/monetization_on.svg" alt="" />
+               </button>
+            </div>
          </section>
          <!-- game window end -->
 
          <!-- score window start-->
-         <section></section>
+         <section
+            class="max-w-[1170x] w-4/5 mx-auto h-screen flex flex-col items-center justify-center"
+         >
+            <!-- border-radius: 16px;
+border: 1px solid rgba(255, 255, 255, 0.20);
+background: linear-gradient(121deg, rgba(255, 255, 255, 0.56) 0%, rgba(152, 151, 151, 0.00) 102.2%); -->
+            <!-- #ffffff8f -->
+            <!--  -->
+            <div
+               class="rounded-2xl text-white text-center space-y-6 border border-[#ffffff33] bg-gradient-to-br from-[#ffffff8f] to-[#989797] p-10"
+            >
+               <h2 class="font-extrabold text-6xl">Score : <span>14</span></h2>
+               <button
+                  class="text-2xl text-[#010313] bg-white rounded-lg px-9 py-5"
+               >
+                  Play Again
+               </button>
+               <p class="text-xl font-medium">Practice will make you Pro</p>
+            </div>
+         </section>
          <!-- opening window end-->
       </main>
+
+      <script>
+         document.getElementById("body").classList.add("one", "two");
+      </script>
    </body>
 </html>
