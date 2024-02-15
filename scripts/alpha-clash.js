@@ -1,7 +1,19 @@
 function play() {
-   showElementById("gameScreen");
+   // hide and show the screens
    hideElementById("homeScreen");
+   hideElementById("scoreScreen");
+   showElementById("gameScreen");
+
+   // reset score and life
+   setTextElementValueById("lifeCounter", 5);
+   setTextElementValueById("scoreCounter", 0);
+
    continueGame();
+}
+
+function gameOver() {
+   hideElementById("gameScreen");
+   showElementById("scoreScreen");
 }
 
 function keyUpEventHandler(event) {
@@ -54,6 +66,10 @@ function keyUpEventHandler(event) {
 
       // 3. show the updated life
       setTextElementValueById("lifeCounter", updatedLife);
+
+      if (updatedLife === 0) {
+         gameOver();
+      }
    }
 }
 
