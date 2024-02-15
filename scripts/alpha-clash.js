@@ -12,9 +12,9 @@ function keyUpEventHandler(event) {
       .innerText.toLowerCase();
 
    if (keyPressed === expectedAlphabet) {
-      console.log(`great, you win`);
+      /**
+       *  update the score
 
-      // update the score
       // 1. get the current score
       const scoreElement = document.getElementById("scoreCounter");
       let currentScore = parseInt(scoreElement.innerText);
@@ -29,17 +29,31 @@ function keyUpEventHandler(event) {
       //   continue game
       removeBackgroundColorById(expectedAlphabet, "bg-yellow-400");
       continueGame();
+       */
+
+      // doing same things above but using function:
+
+      // 1. get the current score
+      const currentScore = getTextElementValueById("scoreCounter");
+
+      // 2. increment the score
+      const updatedScore = currentScore + 1;
+
+      // 3. show the updated score
+      setTextElementValueById("scoreCounter", updatedScore);
+
+      //continue the game
+      removeBackgroundColorById(expectedAlphabet, "bg-yellow-400");
+      continueGame();
    } else {
-      console.log(`sorry you lose`);
       // 1. get the current life
-      const lifeElement = document.getElementById("lifeCounter");
-      let currentLife = parseInt(lifeElement.innerText);
+      currentLife = getTextElementValueById("lifeCounter");
 
       // 2. decrement the life
-      currentLife = currentLife - 1;
+      const updatedLife = currentLife - 1;
 
       // 3. show the updated life
-      lifeElement.innerText = currentLife;
+      setTextElementValueById("lifeCounter", updatedLife);
    }
 }
 
