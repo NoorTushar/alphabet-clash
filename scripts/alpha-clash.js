@@ -11,13 +11,13 @@ function play() {
    continueGame();
 }
 
-function gameOver() {
-   hideElementById("gameScreen");
-   showElementById("scoreScreen");
-}
-
 function keyUpEventHandler(event) {
    const keyPressed = event.key;
+
+   // stop the game if pressed Escape key
+   if (keyPressed === "Escape") {
+      gameOver();
+   }
 
    const expectedAlphabet = document
       .getElementById("alphabetElement")
@@ -56,6 +56,7 @@ function keyUpEventHandler(event) {
 
       //continue the game
       removeBackgroundColorById(expectedAlphabet, "bg-yellow-400");
+
       continueGame();
    } else {
       // 1. get the current life
@@ -86,4 +87,23 @@ function continueGame() {
 
    // step-03: highlight the alphabet on the keyboard screen as well
    setBackgroundColorById(randomAlphabet, "bg-yellow-400");
+}
+
+function gameOver() {
+   hideElementById("gameScreen");
+   showElementById("scoreScreen");
+
+   // show the last updated score
+   // 1. get the final score
+   const finalScore = getTextElementValueById("scoreCounter");
+
+   // 2. set the final score
+   setTextElementValueById("finalScore", finalScore);
+
+   // Clear the last selected highlight key
+   // 1. get the current alphabet which was on the screen
+   const currentAlphabet = getElementTextById("alphabetElement");
+
+   // 2. remove the background color from the id of the element found
+   removeBackgroundColorById(currentAlphabet, "bg-yellow-400");
 }

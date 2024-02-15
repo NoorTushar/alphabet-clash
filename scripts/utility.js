@@ -18,6 +18,12 @@ function removeBackgroundColorById(elementId, color) {
    alphabetElement.classList.remove(color);
 }
 
+function getElementTextById(elementId) {
+   const element = document.getElementById(elementId);
+   const elementText = element.innerText;
+   return elementText;
+}
+
 function getTextElementValueById(elementId) {
    const element = document.getElementById(elementId);
    const value = parseInt(element.innerText);
