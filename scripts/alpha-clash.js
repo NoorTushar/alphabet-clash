@@ -5,45 +5,14 @@ function play() {
 }
 
 function continueGame() {
-   // step-01 generate a random alphabet
+   // step-01: generate a random alphabet
    let randomAlphabet = generateRandomAlphabet();
    console.log(randomAlphabet);
-}
 
-function generateRandomAlphabet() {
-   const alphabets = [
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
-      "n",
-      "o",
-      "p",
-      "q",
-      "r",
-      "s",
-      "t",
-      "u",
-      "v",
-      "w",
-      "x",
-      "y",
-      "z",
-   ];
+   // step-02: show the alphabet on the screen
+   const alphabetElement = document.getElementById("alphabetElement");
+   alphabetElement.innerText = randomAlphabet;
 
-   //total 26 alphabets
-   // 0-25 index
-   let randomIndex = Math.floor(Math.random() * alphabets.length);
-
-   let randomAlphabet = alphabets[randomIndex];
-   return randomAlphabet;
+   // step-03: highlight the alphabet on the keyboard screen as well
+   setBackgroundColorById(randomAlphabet, "bg-yellow-400");
 }
