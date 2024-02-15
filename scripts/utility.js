@@ -47,7 +47,6 @@ function generateRandomAlphabet() {
       "y",
       "z",
    ];
-
    //total 26 alphabets
    // 0-25 index
    let randomIndex = Math.floor(Math.random() * alphabets.length);
